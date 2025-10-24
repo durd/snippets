@@ -35,7 +35,7 @@ dir_path = sys.argv[1]
 
 for path in os.listdir(dir_path):
     # Make sure to change the extension if it is nor 'jpg' ( for example 'JPG','PNG' etc..)
-    if path.endswith('.jpg'):
+    if path.endswith('.jpg') or path.endswith('.JPG'):
       img_path = os.path.join(dir_path, path)
       detect_and_fix( img_path=img_path, img_name = path)
 
