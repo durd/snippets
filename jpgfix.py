@@ -30,7 +30,7 @@ if len(sys.argv) < 2:
     print("Usage: python3 example.py <name>")
     sys.exit(1)
 
-dir_patch = sys.argv[1]
+dir_path = sys.argv[1]
 
 for path in os.listdir(dir_path):
     # Make sure to change the extension if it is nor 'jpg' ( for example 'JPG','PNG' etc..)
