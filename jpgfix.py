@@ -16,12 +16,13 @@ def detect_and_fix(img_path, img_name):
         with open( img_path, 'rb') as im :
             im.seek(-2,2)
             if im.read() == b'\xff\xd9':
-                print('Image OK :', img_name) 
+                print('Image OK :', img_name)
             else: 
                 # fix image
+                print('FIXING corrupted image :', img_name)
                 img = cv2.imread(img_path)
                 cv2.imwrite( img_path, img)
-                print('FIXED corrupted image :', img_name)           
+                print('FIXED corrupted image :', img_name)
     except(IOError, SyntaxError) as e :
       print(e)
       print("Unable to load/write Image : {} . Image might be destroyed".format(img_path) )
